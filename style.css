@@ -8,6 +8,10 @@ body {
 
 }
 
+body.hideScroll{
+  overflow: hidden;
+}
+
 #container{
   width: 90%;
   max-width: 980px;
@@ -70,7 +74,7 @@ button {
 
 }
 
-button.fat:hover{
+.fat:hover{
   text-decoration: none;
 }
 
@@ -80,9 +84,11 @@ button:hover{
 
 
 a:hover{
-  color: #ff5E84;
+  align-self: flex-end;
+  background-color: turquoise;
   font-weight: bold;
   text-decoration: underline;
+  transition: 400ms;
 }
 
 a {
@@ -131,17 +137,21 @@ p, .description{
   background-color: #ff5E84;
   position: absolute;
   top: 0;
-
-  width: 100vw;
-  height: 100vh;
+  bottom: 0;
+  right: 0;
+  left: 0;
 
   display: flex;
   justify-content: center;
   transition: 400ms;
 }
 
+#modal.addScroll{
+  overflow: auto;
+}
+
 #content{
-  margin-top: 128px;
+  margin-top: 15%;
   color:white;
 }
 
@@ -154,7 +164,7 @@ p, .description{
   width: 80%;
   max-width:800px;
 
-  margin: 0 auto;
+  margin: 0 auto 15%;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -271,7 +281,19 @@ body #modal.hide {
   margin-right: 16px;
 }
 
-#page-ideias nav li:last-child{
+#page-ideias nav li{
+  color: #25282B;
+  font-weight: bold;
+}
+
+#page-ideias nav li:last-child a:hover{
+  background-color: turquoise;
+  transition: 400ms;
+  text-decoration: none;
+
+}
+
+#page-ideias nav li:last-child a{
   margin: 0;
   
   width: 150px;
@@ -279,5 +301,48 @@ body #modal.hide {
 
   background-color: #ff5E84;
   color: white;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  font-size: 14px;
+  font-weight: bold;
+
+  border-radius: 6px;
+}
+
+section#title{
+  text-align: center;
+
+  margin: 64px 0;
+}
+
+section#title p{
+
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+section#title h1{
+  margin: 0;
+  font-size: 28px;
+}
+
+section#ideias{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+section#ideias .ideia{
+  margin: 0;
+}
+
+section#ideias,
+section#title,
+footer{
+  margin-top:64px;
 }
